@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:8.3.0'
     }
 }
 rootProject.allprojects {
@@ -18,10 +18,11 @@ rootProject.allprojects {
 }
 apply plugin: 'com.android.library'
 android {
-    compileSdkVersion 30
+    namespace='com.flutterbeacon'
+    compileSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 18
+        minSdkVersion 26
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
@@ -30,8 +31,5 @@ android {
 }
 
 dependencies {
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
-    //api 'org.altbeacon:android-beacon-library:2.16.3'
-    //api "org.altbeacon:android-beacon-library:2.17.1"
-    api "org.altbeacon:android-beacon-library:2.19"
+    implementation 'org.altbeacon:android-beacon-library:2+'
 }
